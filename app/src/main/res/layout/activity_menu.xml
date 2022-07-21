@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -42,9 +41,9 @@
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
-        android:padding="15dp"
         android:background="@drawable/border2"
         android:drawableRight="@drawable/tv6_menu_graph"
+        android:padding="15dp"
         android:text="K값에 따른 수익률"
         android:textColor="@color/white"
         android:textSize="32sp"
@@ -58,9 +57,9 @@
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
-        android:padding="15dp"
         android:background="@drawable/border3"
         android:drawableRight="@drawable/tv7_menu_graph"
+        android:padding="15dp"
         android:text="기간에 따른 수익률"
         android:textColor="@color/white"
         android:textSize="32sp"
@@ -74,9 +73,9 @@
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
-        android:padding="15dp"
         android:background="@drawable/border4"
         android:drawableRight="@drawable/tv8_menu_graph"
+        android:padding="15dp"
         android:text="코인관련 참고 영상"
         android:textColor="@color/white"
         android:textSize="32sp"
@@ -84,4 +83,36 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        app:layout_constraintEnd_toStartOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:text="목표금액"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
