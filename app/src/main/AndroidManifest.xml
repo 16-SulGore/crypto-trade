@@ -20,5 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuActivity" />
+        <activity android:name=".AutoTradeActivity" />
+        <activity android:name=".K_RatioActivity" />
+        <activity android:name=".P_RatioActivity" />
+        <activity android:name=".VideoActivity" />
     </application>
 </manifest>
