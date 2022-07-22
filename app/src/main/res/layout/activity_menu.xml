@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     android:background="#EDEDED">
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="#F3F0F0"
+        android:gravity="center_horizontal"
+        android:hint="숫자만 입력"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="0.2"
+        tools:textSize="12sp" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
