@@ -3,13 +3,22 @@ package com.sulgorae.crypto;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MenuActivity extends AppCompatActivity {
 
-    TextView textview;
+    SQLiteDatabase database;
+    String databaseName = "Crypto";   //데이터베이스 이름 설정
+    String tableName = "crypto";     //테이블 이름설정
+
+    EditText editText;
+    TextView textview11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,5 +70,89 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(menuIntent);
             }
         });
+
+        // 목표 금액을 입력한 후, Done버튼을 누르면 데이터베이스로 값을 전달 (앱을 껐다 켜도 금액 유지를 위함)
+        editText = (EditText) findViewById(R.id.editText);                // 목표금액 입력창
+        textview11 = (TextView) findViewById(R.id.textView11);            // 목표금액 출력창
+
+        initDB();
+
+        ImageView imageview4 = (ImageView) findViewById(R.id.imageView4); // 목표금액 입력버튼
+        imageview4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String price = editText.getText().toString();
+                //insertData("goal_price", price);
+                UpdateData("goal_price", price);
+                selectData(tableName);
+            }
+        });
     }
+
+    // 데이터의 호출
+    public void initDB() {
+        openDatabase(databaseName);
+        createTable(tableName);
+        selectData(tableName);
+    }
+
+    // 데이터베이스 호출
+    public void openDatabase(String databaseName) {
+        database = openOrCreateDatabase(databaseName, MODE_PRIVATE, null); //보안때문에 요즘은 대부분 PRIVATE사용, SQLiteDatabase객체가 반환됨
+    }
+
+    // crypto 테이블 생성
+    public void createTable(String tableName) {
+        if (database != null) {
+            String sql = "create table if not exists " + tableName + "(_id integer PRIMARY KEY autoincrement, name text, price text)";
+            database.execSQL(sql);
+
+            String sql1 = "select name, price from crypto";
+            Cursor cursor = database.rawQuery(sql1, null);
+
+            // 데이터베이스에 아직 레코드가 없을 경우에만 목표금액을 저장하기 위한 레코드 하나 삽입
+            if (cursor.getCount() == 0) {
+                insertData("goal_price", "목표금액");
+            }
+        }
+
+    }
+
+    // 데이터베이스에 목표잔고 레코드 추가 - 테이블 생성시 최초 1회만 입력
+    public void insertData(String name, String price) {
+        if (database != null) {
+            String sql2 = "insert into crypto(name, price) values(?, ?)";
+            Object[] params = {name, price};
+            database.execSQL(sql2, params);
+
+        }
+    }
+
+    // 데이터베이스에 저장된 목표금액을 텍스트뷰에 출력
+    public void selectData(String tableName) {
+        if (database != null) {
+            String sql = "select name, price from crypto where name =" + "'" + "goal_price" + "'";
+            Cursor cursor = database.rawQuery(sql, null);
+
+            for (int i = 0; i < cursor.getCount(); i++) {        // 테이블에 저장된 레코드가 1개뿐이라서 반복문 필요없음. 1회전 후 종료
+                cursor.moveToNext();//다음 레코드로 넘어간다.        // 처음에 커서는 첫번째 커서 위를 가리키고 있어서, 첫 시작에 이걸 적어줘야 첫번째 레코드를 가리킴
+                String name = cursor.getString(0);    // columIndex : 속성의 순서를 뜻함
+                String price = cursor.getString(1);
+                textview11.setText(price);
+            }
+            cursor.close();
+        }
+    }
+
+    // EditText에 새로운 목표금액을 입력하면 데이터베이스의 목표금액도 수정
+    public void UpdateData(String selected_name, String price_data){
+        if(database != null) {
+            String sql = "UPDATE crypto SET price ='" + price_data + "'" + "WHERE name='" + selected_name + "'";
+            database.execSQL(sql);
+        }
+    }
+
+
+
+
 }
