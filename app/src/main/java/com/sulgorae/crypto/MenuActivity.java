@@ -138,7 +138,7 @@ public class MenuActivity extends AppCompatActivity {
                 cursor.moveToNext();//다음 레코드로 넘어간다.        // 처음에 커서는 첫번째 커서 위를 가리키고 있어서, 첫 시작에 이걸 적어줘야 첫번째 레코드를 가리킴
                 String name = cursor.getString(0);    // columIndex : 속성의 순서를 뜻함
                 String price = cursor.getString(1);
-                textview11.setText(price);
+                textview11.setText(price+"원");
             }
             cursor.close();
         }

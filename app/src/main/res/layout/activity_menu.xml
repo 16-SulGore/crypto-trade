@@ -117,7 +117,7 @@
         app:layout_constraintEnd_toStartOf="@+id/progressBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
+        app:srcCompat="@drawable/panda1" />
 
     <TextView
         android:id="@+id/textView11"
