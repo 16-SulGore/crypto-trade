@@ -197,11 +197,11 @@ public class MenuActivity extends AppCompatActivity {
     public void startAnimation() {
         Resources res = getResources();
 
-        drawableList.add(res.getDrawable(R.drawable.panda1));      // 인덱스 0~4에 drawable객체 5개를 저장
-        drawableList.add(res.getDrawable(R.drawable.panda2));
-        drawableList.add(res.getDrawable(R.drawable.panda3));
-        drawableList.add(res.getDrawable(R.drawable.panda2));
-        drawableList.add(res.getDrawable(R.drawable.panda3));
+        drawableList.add(res.getDrawable(R.drawable.crypto1));      // 인덱스 0~4에 drawable객체 5개를 저장
+        drawableList.add(res.getDrawable(R.drawable.crypto2));
+        drawableList.add(res.getDrawable(R.drawable.crypto3));
+        drawableList.add(res.getDrawable(R.drawable.crypto4));
+        drawableList.add(res.getDrawable(R.drawable.crypto5));
 
         AnimThread thread = new AnimThread();
         thread.start();
@@ -222,7 +222,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
                 try {
-                    Thread.sleep(350);
+                    Thread.sleep(500);
                 } catch(Exception e) {
                     e.printStackTrace();
                 }
