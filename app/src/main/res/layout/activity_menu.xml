@@ -12,8 +12,8 @@
         android:layout_height="51dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="30dp"
-        android:gravity="center_horizontal"
         android:fontFamily="@font/one_content_bold"
+        android:gravity="center_horizontal"
         android:hint="숫자만 입력"
         android:inputType="number"
         android:minHeight="48dp"
@@ -34,6 +34,8 @@
         android:text="Coin Trade"
         android:textColor="#000000"
         android:textSize="56sp"
+        android:inputType="number"
+        android:maxLength="9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

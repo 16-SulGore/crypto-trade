@@ -3,13 +3,18 @@ package com.sulgorae.crypto;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -20,15 +25,27 @@ public class MenuActivity extends AppCompatActivity {
     EditText editText;
     TextView textview11;
 
+    ImageView imageView2;                                           // 판다 이미지
+    ArrayList<Drawable> drawableList = new ArrayList<Drawable>();   // drawable객체를 저장하기 위한 배열
+    Handler handler = new Handler();                                // 메인스레드에 있는 UI에 바로 접근할 수 없어서 핸들러를 사용해서 접근
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+
         // 타이틀바에 비트코인 아이콘 추가
         getSupportActionBar().setIcon(R.drawable.app_bar);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        // 판다 애니메이션을 위한 이미지 뷰
+        imageView2 = (ImageView) findViewById(R.id.imageView2);
+
+        // 판다가 걷는 애니메이션 시작
+        startAnimation();
+
 
 
         // 화면을 터치하면 코인 자동매매 화면으로 이동하기 위한 텍스트뷰 클릭 리스너
@@ -93,7 +110,9 @@ public class MenuActivity extends AppCompatActivity {
     public void initDB() {
         openDatabase(databaseName);
         createTable(tableName);
+        //UpdateData("goal_price", "100");
         selectData(tableName);
+
     }
 
     // 데이터베이스 호출
@@ -138,7 +157,28 @@ public class MenuActivity extends AppCompatActivity {
                 cursor.moveToNext();//다음 레코드로 넘어간다.        // 처음에 커서는 첫번째 커서 위를 가리키고 있어서, 첫 시작에 이걸 적어줘야 첫번째 레코드를 가리킴
                 String name = cursor.getString(0);    // columIndex : 속성의 순서를 뜻함
                 String price = cursor.getString(1);
-                textview11.setText(price+"원");
+
+                // string으로 입력받은 값을 숫자로 변환
+                int number_price = Integer.parseInt(price);
+
+                // 입력된 금액이 만원이하이면 '원'으로 표시
+                if (number_price < 10000) {
+                    textview11.setText(price + "원");
+                }
+                // 입력된 금액이 만원이상 1억원이하이면 '만원'을 표시
+                else if (number_price >= 10000 && number_price < 100000000){
+                    textview11.setText(price.substring(0, price.length()-4) + "만원");
+                }
+
+                // 입력된 금액이 1억원이상이면 '억'을 표시
+                else if (number_price >= 100000000 && number_price <= 2000000000) {
+                    textview11.setText(price.substring(0, price.length()-8) + "억");
+                }
+                // 입력된 금액이 10억이상이라면 '10억'으로 고정표시' int값 저장한계, 경고 알림 추가하기
+                else {
+                    textview11.setText("10억");
+                }
+
             }
             cursor.close();
         }
@@ -149,6 +189,44 @@ public class MenuActivity extends AppCompatActivity {
         if(database != null) {
             String sql = "UPDATE crypto SET price ='" + price_data + "'" + "WHERE name='" + selected_name + "'";
             database.execSQL(sql);
+        }
+
+    }
+
+    // 판다 애니메이션 구현
+    public void startAnimation() {
+        Resources res = getResources();
+
+        drawableList.add(res.getDrawable(R.drawable.panda1));      // 인덱스 0~4에 drawable객체 5개를 저장
+        drawableList.add(res.getDrawable(R.drawable.panda2));
+        drawableList.add(res.getDrawable(R.drawable.panda3));
+        drawableList.add(res.getDrawable(R.drawable.panda2));
+        drawableList.add(res.getDrawable(R.drawable.panda3));
+
+        AnimThread thread = new AnimThread();
+        thread.start();
+    }
+
+    class AnimThread extends Thread {
+        public void run() {
+            for (int i = 0; i < 300; i++) {
+                // i를 5로 나눈 나머지에 해당하는 인덱스를 가지는 Drawable을 drawableList에서 가져온다.
+                final Drawable drawable = drawableList.get(i%5);
+                // handler를 이용하여 imageView에 선택한 Drawable을 imageView에 표현한다.
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        imageView2.setImageDrawable(drawable);
+                    }
+                });
+
+
+                try {
+                    Thread.sleep(350);
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 

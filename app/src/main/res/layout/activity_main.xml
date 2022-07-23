@@ -27,6 +27,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="500dp"
+        android:gravity="center"
         android:text="Coin Trade"
         android:textColor="@color/white"
         android:textSize="56sp"
