@@ -25,6 +25,10 @@ public class MenuActivity extends AppCompatActivity {
     EditText editText;
     TextView textview11;
 
+    ImageView imageView2;                                           // 판다 이미지
+    ArrayList<Drawable> drawableList = new ArrayList<Drawable>();   // drawable객체를 저장하기 위한 배열
+    Handler handler = new Handler();                                // 메인스레드에 있는 UI에 바로 접근할 수 없어서 핸들러를 사용해서 접근
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +40,14 @@ public class MenuActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        
+        // 판다 애니메이션을 위한 이미지 뷰
+        imageView2 = (ImageView) findViewById(R.id.imageView2);
+
+        // 판다가 걷는 애니메이션 시작
+        startAnimation();
+
+
+
         // 화면을 터치하면 코인 자동매매 화면으로 이동하기 위한 텍스트뷰 클릭 리스너
         TextView textView5 = (TextView) findViewById(R.id.textView5);
         textView5.setOnClickListener(new View.OnClickListener() {
@@ -182,7 +193,42 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+    // 판다 애니메이션 구현
+    public void startAnimation() {
+        Resources res = getResources();
 
+        drawableList.add(res.getDrawable(R.drawable.panda1));      // 인덱스 0~4에 drawable객체 5개를 저장
+        drawableList.add(res.getDrawable(R.drawable.panda2));
+        drawableList.add(res.getDrawable(R.drawable.panda3));
+        drawableList.add(res.getDrawable(R.drawable.panda2));
+        drawableList.add(res.getDrawable(R.drawable.panda3));
+
+        AnimThread thread = new AnimThread();
+        thread.start();
+    }
+
+    class AnimThread extends Thread {
+        public void run() {
+            for (int i = 0; i < 300; i++) {
+                // i를 5로 나눈 나머지에 해당하는 인덱스를 가지는 Drawable을 drawableList에서 가져온다.
+                final Drawable drawable = drawableList.get(i%5);
+                // handler를 이용하여 imageView에 선택한 Drawable을 imageView에 표현한다.
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        imageView2.setImageDrawable(drawable);
+                    }
+                });
+
+
+                try {
+                    Thread.sleep(350);
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
 
 
