@@ -42,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="150dp"
+        android:fontFamily="@font/one_content_regular"
         android:text="화면을 터치하세요"
         android:textColor="@color/white"
         android:textSize="20sp"
