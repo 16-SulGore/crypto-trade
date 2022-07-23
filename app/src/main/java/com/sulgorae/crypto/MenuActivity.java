@@ -99,7 +99,6 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String price = editText.getText().toString();
-                //insertData("goal_price", price);
                 UpdateData("goal_price", price);
                 selectData(tableName);
             }
@@ -110,7 +109,6 @@ public class MenuActivity extends AppCompatActivity {
     public void initDB() {
         openDatabase(databaseName);
         createTable(tableName);
-        //UpdateData("goal_price", "100");
         selectData(tableName);
 
     }
