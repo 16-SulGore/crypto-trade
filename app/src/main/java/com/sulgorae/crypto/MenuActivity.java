@@ -101,6 +101,8 @@ public class MenuActivity extends AppCompatActivity {
                 String price = editText.getText().toString();
                 UpdateData("goal_price", price);
                 selectData(tableName);
+                editText.setText("");
+                editText.setHint("숫자만 입력");
             }
         });
     }
