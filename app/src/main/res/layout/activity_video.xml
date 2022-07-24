@@ -56,7 +56,7 @@
 
                 <LinearLayout
                     android:layout_width="399dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="28dp"
                     android:layout_weight="1"
 
                     android:background="#ffffff"
@@ -73,7 +73,7 @@
                         <TextView
                             android:id="@+id/tv_video_menu1"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="28dp"
                             android:gravity="center"
                             android:text="사용법"
                             android:textSize="16sp"
@@ -89,7 +89,7 @@
                         <TextView
                             android:id="@+id/tv_video_menu2"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="28dp"
                             android:gravity="center"
                             android:text="코인정보"
                             android:textSize="16sp"
@@ -105,7 +105,7 @@
                         <TextView
                             android:id="@+id/tv_video_menu3"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="28dp"
                             android:gravity="center"
                             android:text="매매이론"
                             android:textSize="16sp"
@@ -121,7 +121,7 @@
                         <TextView
                             android:id="@+id/tv_video_menu4"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="28dp"
                             android:gravity="center"
                             android:text="경제뉴스"
                             android:textSize="16sp"
@@ -137,7 +137,7 @@
                         <TextView
                             android:id="@+id/tv_video_menu5"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="28dp"
                             android:gravity="center"
                             android:text="뒤로가기"
                             android:textSize="16sp"
