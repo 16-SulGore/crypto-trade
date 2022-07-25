@@ -12,12 +12,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
         <TextView
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:fontFamily="@font/one_title"
             android:text="코인자동매매 애플리케이션 사용법"
-            android:textSize="28sp" />
+            android:textSize="24sp" />
 
         <ScrollView
             android:layout_width="match_parent"

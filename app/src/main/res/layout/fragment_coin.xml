@@ -27,16 +27,10 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/border5"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:padding="5dp">
 
                     <LinearLayout
@@ -45,7 +39,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView4"
+                            android:id="@+id/iv1_fg_coin"
                             android:layout_width="325dp"
                             android:layout_height="match_parent"
                             app:srcCompat="@drawable/fg_coin_blockchain" />
@@ -56,10 +50,10 @@
                             android:orientation="vertical">
 
                             <CheckBox
-                                android:id="@+id/checkBox1"
-                                android:layout_width="60dp"
-                                android:layout_height="180dp"
-                                android:layout_marginStart="20dp"
+                                android:id="@+id/checkBox1_fg_coin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="15dp"
                                 android:layout_weight="1"
                                 android:gravity="center" />
                         </LinearLayout>
@@ -79,7 +73,11 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/border5"
+                    android:padding="5dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -87,9 +85,9 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:id="@+id/iv2_fg_coin"
+                            android:layout_width="325dp"
+                            android:layout_height="match_parent"
                             app:srcCompat="@drawable/fg_coin_bitcoin" />
 
                         <LinearLayout
@@ -98,11 +96,12 @@
                             android:orientation="vertical">
 
                             <CheckBox
-                                android:id="@+id/checkBox2"
+                                android:id="@+id/checkBox2_fg_coin"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="15dp"
                                 android:layout_weight="1"
-                                android:text="CheckBox" />
+                                android:gravity="center" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -120,13 +119,39 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/border5"
+                    android:padding="5dp">
 
-                    <ImageView
-                        android:id="@+id/imageView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/fg_coin_ethereum" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv3_fg_coin"
+                            android:layout_width="325dp"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/fg_coin_ethereum" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/checkBox3_fg_coin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="15dp"
+                                android:layout_weight="1"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
@@ -140,13 +165,39 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/border5"
+                    android:padding="5dp">
 
-                    <ImageView
-                        android:id="@+id/imageView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/fg_coin_difference" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv4_fg_coin"
+                            android:layout_width="325dp"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/fg_coin_difference" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/checkBox4_fg_coin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="15dp"
+                                android:layout_weight="1"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
@@ -158,17 +209,44 @@
                         android:layout_height="20dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/fg_coin_difference2" />
-                </TableRow>
             </TableLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/border5"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv5_fg_coin"
+                        android:layout_width="325dp"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/fg_coin_difference2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/checkBox5_fg_coin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </TableRow>
 
         </LinearLayout>
     </ScrollView>
