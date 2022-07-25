@@ -7,10 +7,576 @@
     android:background="#EDEDED"
     tools:content=".Fragment1">
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="경제뉴스 프래그먼트"
-        android:textSize="32sp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Space
+                        android:layout_width="422dp"
+                        android:layout_height="30dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <Space
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/imageView4"
+                                android:layout_width="62dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <LinearLayout
+                                android:layout_width="146dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="풀업"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="( 광배근, 넓이 )"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/imageButton8"
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="#ffffff"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <Space
+                                android:layout_width="26dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal">
+
+                            <Space
+                                android:layout_width="10dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/imageView5"
+                                android:layout_width="62dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <LinearLayout
+                                android:layout_width="146dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView10"
+                                    android:layout_width="204dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="친업"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="( 광배근, 굵기 )"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/imageButton9"
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="#ffffff"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <Space
+                                android:layout_width="21dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal">
+
+                            <Space
+                                android:layout_width="10dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/imageView6"
+                                android:layout_width="62dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <LinearLayout
+                                android:layout_width="146dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView13"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="바벨 로우"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="( 광배근 )"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/imageButton10"
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="#ffffff"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <Space
+                                android:layout_width="21dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="399dp"
+                            android:layout_height="80dp"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal">
+
+                            <Space
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/imageView8"
+                                android:layout_width="66dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <LinearLayout
+                                android:layout_width="157dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView17"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="시티드 로우"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView18"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="( 광배근 )"
+                                    android:textSize="20sp" />
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/imageButton11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="#ffffff"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <Space
+                                android:layout_width="29dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="399dp"
+                            android:layout_height="80dp"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal">
+
+                            <Space
+                                android:layout_width="25dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/imageView9"
+                                android:layout_width="69dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <LinearLayout
+                                android:layout_width="180dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="원암덤벨로우"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView20"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="( 광배근 )"
+                                    android:textSize="20sp" />
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/imageButton12"
+                                android:layout_width="67dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="#ffffff"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <Space
+                                android:layout_width="36dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="421dp"
+                            android:layout_height="80dp"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal">
+
+                            <Space
+                                android:layout_width="15dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/imageView7"
+                                android:layout_width="91dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <LinearLayout
+                                android:layout_width="180dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView15"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="렛풀다운"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView16"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="( 광배근 )"
+                                    android:textSize="20sp" />
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/imageButton13"
+                                android:layout_width="67dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="#FFFFFF"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <Space
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="399dp"
+                            android:layout_height="80dp"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal">
+
+                            <Space
+                                android:layout_width="15dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/imageView10"
+                                android:layout_width="90dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <LinearLayout
+                                android:layout_width="180dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView21"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="데드리프트"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView22"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="( 슬굴곡근 )"
+                                    android:textSize="20sp" />
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/imageButton14"
+                                android:layout_width="67dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="#ffffff"
+                                app:srcCompat="@drawable/crypto1" />
+
+                            <Space
+                                android:layout_width="36dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp" />
+                    </TableRow>
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 </FrameLayout>
