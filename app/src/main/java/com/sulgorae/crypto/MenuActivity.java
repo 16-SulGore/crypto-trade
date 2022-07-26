@@ -25,8 +25,8 @@ public class MenuActivity extends AppCompatActivity {
     EditText editText;
     TextView textview11;
 
-    ImageView imageView2;                                           // 판다 이미지
-    ArrayList<Drawable> drawableList = new ArrayList<Drawable>();   // drawable객체를 저장하기 위한 배열
+    ImageView imageView2;                                           // 코인 이미지
+    ArrayList<Drawable> drawableList = new ArrayList<>();           // drawable객체를 저장하기 위한 배열
     Handler handler = new Handler();                                // 메인스레드에 있는 UI에 바로 접근할 수 없어서 핸들러를 사용해서 접근
 
     @Override
@@ -40,10 +40,10 @@ public class MenuActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        // 판다 애니메이션을 위한 이미지 뷰
+        // 코인 애니메이션을 위한 이미지 뷰
         imageView2 = (ImageView) findViewById(R.id.imageView2);
 
-        // 판다가 걷는 애니메이션 시작
+        // 코인이 바뀌는 애니메이션 시작
         startAnimation();
 
 
@@ -193,7 +193,7 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    // 판다 애니메이션 구현
+    // 코인 애니메이션 구현
     public void startAnimation() {
         Resources res = getResources();
 
