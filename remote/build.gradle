@@ -44,7 +44,7 @@ dependencies {
     // kotest
     testImplementation "io.kotest:kotest-runner-junit5:$kotest_version"
     testImplementation "io.kotest:kotest-assertions-core:$kotest_version"
-    implementation "org.jetbrains.kotlin:kotlin-reflect:1.6.10"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     // mockk
     testImplementation "io.mockk:mockk:$mockk_version"
@@ -52,6 +52,8 @@ dependencies {
 
     // coroutine test
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.2"){ force = true }
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
