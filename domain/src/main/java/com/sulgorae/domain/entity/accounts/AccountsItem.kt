@@ -1,10 +1,10 @@
 package com.sulgorae.domain.entity.accounts
 
-data class Accounts(
-    val currency: String,
-    val balance: String,
-    val locked: String,
+data class AccountsItem(
     val avg_buy_price: String,
     val avg_buy_price_modified: Boolean,
+    val balance: String,
+    val currency: String,
+    val locked: String,
     val unit_currency: String
 )
