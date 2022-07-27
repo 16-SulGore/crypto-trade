@@ -1,6 +1,7 @@
 package com.sulgorae.remote.datasource
 
 import com.sulgorae.domain.entity.accounts.Accounts
+import com.sulgorae.domain.entity.accounts.AccountsItem
 import com.sulgorae.remote.service.AccountsService
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
@@ -15,14 +16,15 @@ class ExchangeRemoteDataSourceTest : BehaviorSpec() {
 
     init {
         Given("Exchange Data Source") {
-            val mockAccounts = Accounts(
+            val mockAccounts = Accounts()
+            mockAccounts.add( AccountsItem(
                 currency = "BTC",
                 balance = "1.0",
                 locked = "0.0",
                 avg_buy_price = "0",
                 avg_buy_price_modified = false,
                 unit_currency = "KRW"
-            )
+            ))
 
             When("자산을 조회할 때 올바르게 호출되면") {
                 coEvery { accountsService.getAccounts() } returns mockAccounts
