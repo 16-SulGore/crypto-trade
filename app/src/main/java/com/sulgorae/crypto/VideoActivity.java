@@ -129,11 +129,10 @@ public class VideoActivity extends AppCompatActivity {
         });
     }
 
-    // 데이터의 호출
+    // 데이터의 호출 및 초기화
     public void initDB(){
         openDatabase(databaseName);
         createTable(tableName2);
-        selectData(tableName2);
     }
 
     // 데이터베이스 호출
@@ -195,121 +194,6 @@ public class VideoActivity extends AppCompatActivity {
         if(database != null) {
             String sql = "UPDATE video_checkbox SET chk ='" + chk + "'" + "WHERE name='" + selected_name + "'";
             database.execSQL(sql);
-        }
-    }
-
-    // 데이터베이스에 저장된 체크박스 체크 유무를 확인하여, 체크유무 출력해주기
-    public void selectData(String tableName) {
-        if (database != null) {
-            String sql = "select name, num, chk from " + tableName;
-            Cursor cursor = database.rawQuery(sql, null);
-
-            for (int i = 0; i < cursor.getCount(); i++) {
-                cursor.moveToNext();//다음 레코드로 넘어간다.        // 처음에 커서는 첫번째 커서 위를 가리키고 있어서, 첫 시작에 이걸 적어줘야 첫번째 레코드를 가리킴
-                String name = cursor.getString(0);    // columIndex : 속성의 순서를 뜻함
-                int num = cursor.getInt(1);
-                int chk = cursor.getInt(2);
-
-                //test2.append(name + '\n');
-/*
-                // CoinFragment-----------------------------------------------
-                // 블록체인 5분 만에 이해하기 유튜브
-                if (num == 0){
-                    if(chk == 0)
-                        checkBox1_fg_coin.setChecked(true);
-                    else
-                        checkBox1_fg_coin.setChecked(false);
-                }
-
-                else if (num == 1){
-                    if(chk == 0)
-                        checkBox2_fg_coin.setChecked(true);
-                    else
-                        checkBox2_fg_coin.setChecked(false);
-                }
-
-                else if (num == 2){
-                    if(chk == 0)
-                        checkBox3_fg_coin.setChecked(true);
-                    else
-                        checkBox3_fg_coin.setChecked(false);
-                }
-
-                else if (num == 3){
-                    if(chk == 0)
-                        checkBox4_fg_coin.setChecked(true);
-                    else
-                        checkBox4_fg_coin.setChecked(false);
-                }
-
-                else if (num == 4){
-                    if(chk == 0)
-                        checkBox1_fg_theory.setChecked(true);
-                    else
-                        checkBox1_fg_theory.setChecked(false);
-                }
-
-                // TradeTheoryFragment ------------------------------------
-                else if (num == 5){
-                    if(chk == 0)
-                        checkBox2_fg_theory.setChecked(true);
-                    else
-                        checkBox2_fg_theory.setChecked(false);
-                }
-
-                else if (num == 6){
-                    if(chk == 0)
-                        checkBox3_fg_theory.setChecked(true);
-                    else
-                        checkBox3_fg_theory.setChecked(false);
-                }
-
-                else if (num == 7){
-                    if(chk == 0)
-                        checkBox5_fg_coin.setChecked(true);
-                    else
-                        checkBox5_fg_coin.setChecked(false);
-                }
-
-                // NewsFragment------------------------------------------
-                else if (num == 8){
-                    if(chk == 0)
-                        checkBox1_fg_news.setChecked(true);
-                    else
-                        checkBox1_fg_news.setChecked(false);
-                }
-
-                else if (num == 9){
-                    if(chk == 0)
-                        checkBox2_fg_news.setChecked(true);
-                    else
-                        checkBox2_fg_news.setChecked(false);
-                }
-
-                else if (num == 10){
-                    if(chk == 0)
-                        checkBox3_fg_news.setChecked(true);
-                    else
-                        checkBox3_fg_news.setChecked(false);
-                }
-
-                else if (num == 11){
-                    if(chk == 0)
-                        checkBox4_fg_news.setChecked(true);
-                    else
-                        checkBox4_fg_news.setChecked(false);
-                }
-
-                else if (num == 12){
-                    if(chk == 0)
-                        checkBox5_fg_news.setChecked(true);
-                    else
-                        checkBox5_fg_news.setChecked(false);
-                }
-            }
-            cursor.close();
-            */
-            }  // 이거 이따가 지우기
         }
     }
 

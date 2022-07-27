@@ -29,6 +29,7 @@ public class CoinFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_coin, container, false);
 
+        // 데이터베이스 생성 및 Select문 출력
         onDatabaseCreate(rootView);
 
         // ------------이미지뷰 클릭이벤트 (유튜브 재생) ---------------------------------------------------------
