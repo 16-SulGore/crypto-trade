@@ -4,5 +4,5 @@ import com.sulgorae.domain.entity.accounts.Accounts
 
 interface ExchangeDataSource {
 
-    fun getAccounts(): Accounts
+    suspend fun getAccounts(): Accounts
 }
