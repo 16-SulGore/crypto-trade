@@ -17,6 +17,7 @@ object ApiService {
             .build()
     }
 
+    // reference: https://docs.upbit.com/docs/create-authorization-request
     val token = {
         val accessKey = "발급받은 Access key"
         val secretKey = "발급받은 Secret key"
