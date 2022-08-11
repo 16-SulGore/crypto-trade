@@ -3,15 +3,10 @@ package com.sulgorae.remote.datasource
 import com.sulgorae.domain.entity.accounts.Accounts
 import com.sulgorae.domain.entity.accounts.AccountsItem
 import com.sulgorae.remote.service.AccountsService
-import io.kotest.assertions.asClue
 import io.kotest.assertions.throwables.shouldThrow
-import io.kotest.assertions.throwables.shouldThrowAny
 import io.kotest.core.spec.style.BehaviorSpec
-import io.kotest.matchers.collections.shouldStartWith
-import io.kotest.matchers.should
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.string.shouldStartWith
-import io.kotest.matchers.string.startWith
 import io.mockk.coEvery
 import io.mockk.mockk
 
