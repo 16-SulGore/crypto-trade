@@ -2,7 +2,7 @@ package com.sulgorae.crypto.utils
 
 import com.sulgorae.domain.entity.accounts.Accounts
 import com.sulgorae.domain.entity.accounts.AccountsItem
-import com.sulgorae.domain.entity.ticker.Ticker
+import com.sulgorae.data.entity.ticker.Ticker
 import com.sulgorae.domain.entity.ticker.TickerItem
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
@@ -29,7 +29,7 @@ class CalculatorTest : BehaviorSpec() {
                 unit_currency = ""
             ))
 
-            val mockTicker = Ticker()
+            val mockTicker = com.sulgorae.data.entity.ticker.Ticker()
             mockTicker.add( TickerItem(acc_trade_price = 0.0,
                 acc_trade_price_24h = 0.0,
                 acc_trade_volume = 0.0,
