@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity" />
+        <activity android:name=".menu.MenuActivity" />
         <activity android:name=".AutoTradeActivity" />
         <activity android:name=".K_RatioActivity" />
         <activity android:name=".P_RatioActivity" />

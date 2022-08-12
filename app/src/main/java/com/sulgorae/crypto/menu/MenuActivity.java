@@ -1,4 +1,4 @@
-package com.sulgorae.crypto;
+package com.sulgorae.crypto.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.sulgorae.crypto.AutoTradeActivity;
+import com.sulgorae.crypto.K_RatioActivity;
+import com.sulgorae.crypto.P_RatioActivity;
+import com.sulgorae.crypto.R;
+import com.sulgorae.crypto.VideoActivity;
 
 import java.util.ArrayList;
 

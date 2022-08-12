@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.sulgorae.crypto.menu.MenuActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
