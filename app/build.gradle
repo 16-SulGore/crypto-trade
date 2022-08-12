@@ -50,6 +50,9 @@ dependencies {
     // coroutine test
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
 
+    // viewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel_version"
+
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

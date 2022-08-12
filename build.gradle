@@ -15,6 +15,9 @@ buildscript {
 
         // jwt
         jwt_version = "4.0.0-beta.0"
+
+        // viewmodel
+        viewmodel_version = "2.5.1"
     }
     repositories {
         mavenCentral()
