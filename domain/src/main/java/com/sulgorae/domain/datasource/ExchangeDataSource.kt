@@ -1,8 +1,8 @@
 package com.sulgorae.domain.datasource
 
-import com.sulgorae.domain.entity.accounts.Accounts
+import com.sulgorae.domain.entity.Account
 
 interface ExchangeDataSource {
 
-    suspend fun getAccounts(): Accounts
+    suspend fun getAccounts(): List<Account>
 }
