@@ -1,6 +1,7 @@
 package com.sulgorae.crypto.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -34,6 +35,8 @@ public class MenuActivity extends AppCompatActivity {
     ImageView imageView2;                                           // 코인 이미지
     ArrayList<Drawable> drawableList = new ArrayList<>();           // drawable객체를 저장하기 위한 배열
     Handler handler = new Handler();                                // 메인스레드에 있는 UI에 바로 접근할 수 없어서 핸들러를 사용해서 접근
+
+    MenuViewModel menuViewModel = new ViewModelProvider(this).get(MenuViewModel.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -211,6 +214,12 @@ public class MenuActivity extends AppCompatActivity {
 
         AnimThread thread = new AnimThread();
         thread.start();
+    }
+
+    private void setTotalAccounts() {
+        menuViewModel.getTotalAccount().observe(this, total -> {
+            // TODO: 총계가 total로 수신
+        });
     }
 
     class AnimThread extends Thread {
