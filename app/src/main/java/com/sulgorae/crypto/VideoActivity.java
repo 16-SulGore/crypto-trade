@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.sulgorae.crypto.menu.MenuActivity;
+
 public class VideoActivity extends AppCompatActivity {
 
     SQLiteDatabase database;
