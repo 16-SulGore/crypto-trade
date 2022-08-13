@@ -20,6 +20,8 @@ import com.sulgorae.crypto.K_RatioActivity;
 import com.sulgorae.crypto.P_RatioActivity;
 import com.sulgorae.crypto.R;
 import com.sulgorae.crypto.VideoActivity;
+import com.sulgorae.crypto.di.Injection;
+import com.sulgorae.crypto.di.ViewModelFactory;
 
 import java.util.ArrayList;
 
@@ -36,7 +38,10 @@ public class MenuActivity extends AppCompatActivity {
     ArrayList<Drawable> drawableList = new ArrayList<>();           // drawable객체를 저장하기 위한 배열
     Handler handler = new Handler();                                // 메인스레드에 있는 UI에 바로 접근할 수 없어서 핸들러를 사용해서 접근
 
-    MenuViewModel menuViewModel = new ViewModelProvider(this).get(MenuViewModel.class);
+    MenuViewModel menuViewModel = new ViewModelProvider(this, new ViewModelFactory(
+            Injection.INSTANCE.getExchangeDataSource(),
+            Injection.INSTANCE.getQuotationDataSource()
+    )).get(MenuViewModel.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
