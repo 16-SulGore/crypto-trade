@@ -38,15 +38,15 @@ public class MenuActivity extends AppCompatActivity {
     ArrayList<Drawable> drawableList = new ArrayList<>();           // drawable객체를 저장하기 위한 배열
     Handler handler = new Handler();                                // 메인스레드에 있는 UI에 바로 접근할 수 없어서 핸들러를 사용해서 접근
 
-    MenuViewModel menuViewModel = new ViewModelProvider(this, new ViewModelFactory(
-            Injection.INSTANCE.getExchangeDataSource(),
-            Injection.INSTANCE.getQuotationDataSource()
-    )).get(MenuViewModel.class);
+    MenuViewModel menuViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        setTotalAccounts();
+        setViewModel();
 
 
         // 타이틀바에 비트코인 아이콘 추가
@@ -119,6 +119,13 @@ public class MenuActivity extends AppCompatActivity {
                 editText.setHint("숫자만 입력");
             }
         });
+    }
+
+    private void setViewModel() {
+        menuViewModel = new ViewModelProvider(this, new ViewModelFactory(
+                Injection.INSTANCE.getExchangeDataSource(),
+                Injection.INSTANCE.getQuotationDataSource()
+        )).get(MenuViewModel.class);
     }
 
     // 데이터의 호출
