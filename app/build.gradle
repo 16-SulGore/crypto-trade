@@ -53,6 +53,11 @@ dependencies {
     // viewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel_version"
 
-    implementation "androidx.core:core-ktx:+"
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$retrofit_adapter_version"
+
+    implementation "androidx.core:core-ktx:$ktx_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

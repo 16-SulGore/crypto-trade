@@ -18,6 +18,9 @@ buildscript {
 
         // viewmodel
         viewmodel_version = "2.5.1"
+
+        // ktx
+        ktx_version = "1.8.0"
     }
     repositories {
         mavenCentral()
