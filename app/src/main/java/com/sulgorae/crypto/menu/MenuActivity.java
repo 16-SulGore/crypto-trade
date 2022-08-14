@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -45,8 +46,8 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        setTotalAccounts();
         setViewModel();
+        setTotalAccounts();
 
 
         // 타이틀바에 비트코인 아이콘 추가
@@ -229,9 +230,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void setTotalAccounts() {
-        menuViewModel.getTotalAccount().observe(this, total -> {
-            // TODO: 총계가 total로 수신
-        });
+        menuViewModel.getTotalAccount().observe(this, total ->
+                Log.i("TOTAL", total.toString())
+        );
     }
 
     class AnimThread extends Thread {
