@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface QuotationService {
 
-    @GET("/ticker")
+    @GET("ticker")
     suspend fun getTicker(@Query("market") market: String = "KRW-BTC"): Ticker
 
     @GET("candles/days")
