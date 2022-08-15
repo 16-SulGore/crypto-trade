@@ -12,7 +12,8 @@ internal class AppInterceptor : Interceptor {
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response = with(chain) {
         val header = request().newBuilder()
-            .addHeader("Bearer", getToken)
+            .header("Accept", "application/json")
+            .addHeader("Authorization", getToken)
             .build()
         proceed(header)
     }
@@ -24,7 +25,7 @@ internal class AppInterceptor : Interceptor {
         val secretKey = TEMP_SECRET_KEY
         val algorithm: Algorithm = Algorithm.HMAC256(secretKey)
 
-        JWT.create()
+        "Bearer " + JWT.create()
             .withClaim("access_key", accessKey)
             .withClaim("nonce", UUID.randomUUID().toString())
             .sign(algorithm)
@@ -33,7 +34,6 @@ internal class AppInterceptor : Interceptor {
     }.getOrThrow()
 
     companion object {
-        const val KEY_PATH = "./key.txt"
         const val TEMP_ACCESS_KEY = ""
         const val TEMP_SECRET_KEY = ""
     }
