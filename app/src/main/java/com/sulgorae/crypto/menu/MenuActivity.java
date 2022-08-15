@@ -17,8 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sulgorae.crypto.AutoTradeActivity;
-import com.sulgorae.crypto.K_RatioActivity;
-import com.sulgorae.crypto.P_RatioActivity;
+import com.sulgorae.crypto.ratio.K_RatioActivity;
+import com.sulgorae.crypto.ratio.P_RatioActivity;
 import com.sulgorae.crypto.R;
 import com.sulgorae.crypto.VideoActivity;
 import com.sulgorae.crypto.di.Injection;
@@ -153,7 +153,7 @@ public class MenuActivity extends AppCompatActivity {
 
             // 데이터베이스에 아직 레코드가 없을 경우에만 목표금액을 저장하기 위한 레코드 하나 삽입
             if (cursor.getCount() == 0) {
-                insertData("goal_price", "목표금액");
+                insertData("goal_price", "0");
             }
         }
 

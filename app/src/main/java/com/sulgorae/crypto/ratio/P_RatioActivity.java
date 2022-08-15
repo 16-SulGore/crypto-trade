@@ -1,8 +1,10 @@
-package com.sulgorae.crypto;
+package com.sulgorae.crypto.ratio;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.sulgorae.crypto.R;
 
 // 기간에 따른 수익률 화면
 public class P_RatioActivity extends AppCompatActivity {
