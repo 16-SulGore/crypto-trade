@@ -23,6 +23,7 @@ import com.sulgorae.crypto.R;
 import com.sulgorae.crypto.VideoActivity;
 import com.sulgorae.crypto.di.Injection;
 import com.sulgorae.crypto.di.ViewModelFactory;
+import com.sulgorae.crypto.ratio.RatioActivity;
 
 import java.util.ArrayList;
 
@@ -74,23 +75,19 @@ public class MenuActivity extends AppCompatActivity {
         });
 
         // 화면을 터치하면 K값에 따른 수익률 화면으로 이동하기 위한 텍스트뷰 클릭 리스너
-        TextView textView6 = (TextView) findViewById(R.id.textView6);
-        textView6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent menuIntent = new Intent(getApplicationContext(), K_RatioActivity.class);
-                startActivity(menuIntent);
-            }
+        TextView textView6 = findViewById(R.id.textView6);
+        textView6.setOnClickListener(view -> {
+            Intent menuIntent = new Intent(getApplicationContext(), RatioActivity.class);
+            menuIntent.putExtra(RatioActivity.RATIO_TYPE, RatioActivity.RATIO_K);
+            startActivity(menuIntent);
         });
 
         // 화면을 터치하면 기간에 따른 수익률 화면으로 이동하기 위한 텍스트뷰 클릭 리스너
         TextView textView7 = (TextView) findViewById(R.id.textView7);
-        textView7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent menuIntent = new Intent(getApplicationContext(), P_RatioActivity.class);
-                startActivity(menuIntent);
-            }
+        textView7.setOnClickListener(view -> {
+            Intent menuIntent = new Intent(getApplicationContext(), RatioActivity.class);
+            menuIntent.putExtra(RatioActivity.RATIO_TYPE, RatioActivity.RATIO_P);
+            startActivity(menuIntent);
         });
 
         // 화면을 터치하면 코인관련 참고 영상화면으로 이동하기 위한 텍스트뷰 클릭 리스너
