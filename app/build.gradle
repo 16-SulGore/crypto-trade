@@ -66,5 +66,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // mp android
-    implementation "com.github.PhilJay:MPAndroidChart:v$mpandroid_version"
+    implementation "com.github.PhilJay:MPAndroidChart:$mpandroid_version"
 }

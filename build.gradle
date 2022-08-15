@@ -23,11 +23,10 @@ buildscript {
         ktx_version = "1.8.0"
 
         // mp android
-        mpandroid_version = "3.1.0"
+        mpandroid_version = "v3.1.0"
     }
     repositories {
         mavenCentral()
-        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
