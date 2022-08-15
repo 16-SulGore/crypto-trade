@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface AccountsService {
 
-    @GET("/accounts")
+    @GET("accounts")
     suspend fun getAccounts(): List<Account>
 }
