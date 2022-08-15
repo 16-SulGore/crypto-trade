@@ -64,4 +64,7 @@ dependencies {
 
     implementation "androidx.core:core-ktx:$ktx_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // mp android
+    implementation "com.github.PhilJay:MPAndroidChart:v$mpandroid_version"
 }
