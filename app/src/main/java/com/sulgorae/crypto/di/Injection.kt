@@ -5,7 +5,7 @@ import com.sulgorae.domain.datasource.QuotationDataSource
 import com.sulgorae.remote.datasource.ExchangeRemoteDataSource
 import com.sulgorae.remote.datasource.QuotationRemoteDataSource
 import com.sulgorae.remote.service.AccountsService
-import com.sulgorae.remote.service.TickerService
+import com.sulgorae.remote.service.QuotationService
 import retrofit.ApiService
 
 object Injection {
@@ -13,7 +13,7 @@ object Injection {
     private val accountsService: AccountsService by lazy { ApiService.upbitClient.create(AccountsService::class.java) }
     val exchangeDataSource: ExchangeDataSource by lazy { ExchangeRemoteDataSource(accountsService) }
 
-    private val tickerService: TickerService by lazy { ApiService.upbitClient.create(TickerService::class.java) }
+    private val tickerService: QuotationService by lazy { ApiService.upbitClient.create(QuotationService::class.java) }
     val quotationDataSource: QuotationDataSource by lazy { QuotationRemoteDataSource(tickerService)}
 
 }

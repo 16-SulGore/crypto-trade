@@ -2,7 +2,7 @@ package com.sulgorae.remote.datasource
 
 import com.sulgorae.domain.datasource.QuotationDataSource
 import com.sulgorae.domain.entity.TickerEntity
-import com.sulgorae.remote.service.TickerService
+import com.sulgorae.remote.service.QuotationService
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
@@ -12,7 +12,7 @@ import io.mockk.mockk
 
 internal class QuotationRemoteDataSourceTest : BehaviorSpec() {
 
-    private val tickerService = mockk<TickerService>(relaxUnitFun = true)
+    private val tickerService = mockk<QuotationService>(relaxUnitFun = true)
 
     private val quotationDataSource: QuotationDataSource = QuotationRemoteDataSource(tickerService)
 

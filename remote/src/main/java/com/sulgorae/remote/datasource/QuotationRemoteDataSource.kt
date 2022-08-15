@@ -1,9 +1,9 @@
 package com.sulgorae.remote.datasource
 
 import com.sulgorae.domain.datasource.QuotationDataSource
-import com.sulgorae.remote.service.TickerService
+import com.sulgorae.remote.service.QuotationService
 
-class QuotationRemoteDataSource(private val tickerService: TickerService) : QuotationDataSource {
+class QuotationRemoteDataSource(private val tickerService: QuotationService) : QuotationDataSource {
 
     override suspend fun getTicker(market: String) = runCatching {
         tickerService.getTicker(market).toEntities()[0]
