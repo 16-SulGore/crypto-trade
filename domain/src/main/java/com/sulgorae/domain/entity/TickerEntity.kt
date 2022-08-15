@@ -1,6 +1,6 @@
 package com.sulgorae.domain.entity
 
-data class Ticker (
+data class TickerEntity (
     val market: String,
     val openingPrice: Double,
     val highPrice: Double,

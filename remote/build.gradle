@@ -31,6 +31,7 @@ android {
 
 dependencies {
     implementation project(path: ':domain')
+    implementation project(path: ':data')
 
     //noinspection GradleDependency
     implementation "androidx.core:core-ktx:$ktx_version"
