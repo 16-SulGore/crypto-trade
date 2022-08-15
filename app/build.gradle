@@ -67,4 +67,8 @@ dependencies {
 
     // mp android
     implementation "com.github.PhilJay:MPAndroidChart:$mpandroid_version"
+
+    // navigation component
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 }
