@@ -3,15 +3,12 @@ package com.sulgorae.crypto.ratio
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import com.github.mikephil.charting.data.Entry
-import com.github.mikephil.charting.data.LineData
-import com.github.mikephil.charting.data.LineDataSet
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.sulgorae.crypto.R
 import com.sulgorae.crypto.common.BaseFragment
 import com.sulgorae.crypto.databinding.FragmentPRatioBinding
 import com.sulgorae.crypto.di.Injection
 import com.sulgorae.crypto.di.ViewModelFactory
+import com.sulgorae.crypto.utils.toLineData
 
 class PRatioFragment : BaseFragment<FragmentPRatioBinding>(R.layout.fragment_p_ratio) {
 
@@ -23,13 +20,23 @@ class PRatioFragment : BaseFragment<FragmentPRatioBinding>(R.layout.fragment_p_r
         super.onViewCreated(view, savedInstanceState)
 
         setChart()
+
+        showChart()
     }
 
     private fun setChart() {
-        binding.lineChartPRatio.data = LineData(arrayListOf<ILineDataSet>(LineDataSet(ratioViewModel.dataSet.map {
-            Entry(
-                // TODO: y, x, icon mapping
-            )
-        }, "")))
+        ratioViewModel.setProfit()
+    }
+
+    private fun showChart() {
+        ratioViewModel.kDataSet.observe(requireActivity()) { dataSet ->
+            with(binding.lineChartPRatio) {
+                val inputData = dataSet.toLineData(R.drawable.crypto1)
+                data = inputData
+                data.notifyDataChanged()
+                notifyDataSetChanged()
+                invalidate()
+            }
+        }
     }
 }

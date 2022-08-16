@@ -3,10 +3,7 @@ package com.sulgorae.crypto.ratio
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import com.github.mikephil.charting.data.Entry
-import com.github.mikephil.charting.data.LineData
-import com.github.mikephil.charting.data.LineDataSet
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
+import com.github.mikephil.charting.components.XAxis
 import com.sulgorae.crypto.R
 import com.sulgorae.crypto.common.BaseFragment
 import com.sulgorae.crypto.databinding.FragmentKRatioBinding
@@ -24,11 +21,23 @@ class KRationFragment : BaseFragment<FragmentKRatioBinding>(R.layout.fragment_k_
         super.onViewCreated(view, savedInstanceState)
 
         setChart()
+
+        showChart()
     }
 
     private fun setChart() {
+        ratioViewModel.setProfit()
+    }
+
+    private fun showChart() {
         ratioViewModel.kDataSet.observe(requireActivity()) { dataSet ->
-            binding.lineChartKRatio.data = dataSet.toLineData(R.drawable.done) // FIXME: 차트에 찍을 점 드로어블 지정
+            with (binding.lineChartKRatio) {
+                val inputData = dataSet.toLineData(R.drawable.crypto1)
+                data = inputData
+                data.notifyDataChanged()
+                notifyDataSetChanged()
+                invalidate()
+            }
         }
     }
 }
