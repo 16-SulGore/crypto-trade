@@ -12,6 +12,7 @@ import com.sulgorae.crypto.common.BaseFragment
 import com.sulgorae.crypto.databinding.FragmentKRatioBinding
 import com.sulgorae.crypto.di.Injection
 import com.sulgorae.crypto.di.ViewModelFactory
+import com.sulgorae.crypto.utils.toLineData
 
 class KRationFragment : BaseFragment<FragmentKRatioBinding>(R.layout.fragment_k_ratio) {
 
@@ -26,10 +27,8 @@ class KRationFragment : BaseFragment<FragmentKRatioBinding>(R.layout.fragment_k_
     }
 
     private fun setChart() {
-        binding.lineChartKRatio.data = LineData(arrayListOf<ILineDataSet>(LineDataSet(ratioViewModel.dataSet.map {
-            Entry(
-                // TODO: y, x, icon mapping
-            )
-        }, "")))
+        ratioViewModel.kDataSet.observe(requireActivity()) { dataSet ->
+            binding.lineChartKRatio.data = dataSet.toLineData(R.drawable.done) // FIXME: 차트에 찍을 점 드로어블 지정
+        }
     }
 }
