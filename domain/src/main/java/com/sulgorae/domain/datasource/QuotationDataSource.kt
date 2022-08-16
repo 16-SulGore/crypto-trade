@@ -8,4 +8,6 @@ interface QuotationDataSource {
     suspend fun getTicker(market: String): TickerEntity
 
     suspend fun getDayCandle(market: String): DayCandleEntity
+
+    suspend fun getDayCandleWithPeriod(market: String, to: String): DayCandleEntity
 }

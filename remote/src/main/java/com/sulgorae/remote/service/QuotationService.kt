@@ -12,4 +12,7 @@ interface QuotationService {
 
     @GET("candles/days")
     suspend fun getDayCandle(@Query("market") market: String = "KRW-BTC"): Days
+
+    @GET("candles/days")
+    suspend fun getDayCandleByPeriod(@Query("market") market: String = "KRW-BTC", @Query("to") to: String): Days
 }
