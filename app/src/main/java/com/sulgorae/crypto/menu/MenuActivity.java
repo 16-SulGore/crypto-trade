@@ -17,8 +17,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sulgorae.crypto.AutoTradeActivity;
-import com.sulgorae.crypto.ratio.K_RatioActivity;
-import com.sulgorae.crypto.ratio.P_RatioActivity;
 import com.sulgorae.crypto.R;
 import com.sulgorae.crypto.VideoActivity;
 import com.sulgorae.crypto.di.Injection;
