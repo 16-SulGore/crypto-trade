@@ -15,7 +15,7 @@ class ViewModelFactory(
     override fun <T : ViewModel> create(modelClass: Class<T>) = with(modelClass) {
         when {
             isAssignableFrom(MenuViewModel::class.java) -> MenuViewModel(exchangeDataSource, quotationDataSource)
-            isAssignableFrom(RatioViewModel::class.java) -> RatioViewModel()
+            isAssignableFrom(RatioViewModel::class.java) -> RatioViewModel(quotationDataSource)
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }
     } as T
