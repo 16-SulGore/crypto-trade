@@ -21,6 +21,12 @@ buildscript {
 
         // ktx
         ktx_version = "1.8.0"
+
+        // mp android
+        mpandroid_version = "v3.1.0"
+
+        // nav
+        nav_version = "2.4.1"
     }
     repositories {
         mavenCentral()

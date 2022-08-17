@@ -64,4 +64,11 @@ dependencies {
 
     implementation "androidx.core:core-ktx:$ktx_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // mp android
+    implementation "com.github.PhilJay:MPAndroidChart:$mpandroid_version"
+
+    // navigation component
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 }

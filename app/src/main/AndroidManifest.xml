@@ -23,8 +23,7 @@
         </activity>
         <activity android:name=".menu.MenuActivity" />
         <activity android:name=".AutoTradeActivity" />
-        <activity android:name=".ratio.K_RatioActivity" />
-        <activity android:name=".ratio.P_RatioActivity" />
         <activity android:name=".VideoActivity" />
+        <activity android:name=".ratio.RatioActivity" />
     </application>
 </manifest>
